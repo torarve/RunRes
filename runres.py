@@ -226,11 +226,11 @@ if __name__=="__main__":
 		parser.add_argument("height", type=int, help="Screen height")
 		parser.add_argument("cmd", type=str, help="Command to execute")
 		args = parser.parse_args()
-		# try:
-		# 	set_resolution(args.width, args.height)
-		# 	subprocess.call(args.cmd)
-		# finally:
-		# 	set_display_defaults()
+		try:
+			set_resolution(args.width, args.height)
+			subprocess.call(args.cmd)
+		finally:
+			set_display_defaults()
 	finally:
 		if output is not None:
 			msg = output.getvalue()
